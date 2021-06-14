@@ -47,14 +47,14 @@
         <input type="submit" name="session.login" value="Entrar">
     </form>
 <% } else { %>
-    <% String role = (String) session.getAttribute("user.role"); %>
+    <% String role = (String) session.getAttribute("user.name"); %>
     <form method="post">
         Bem vindo, <b>
             <a href="me.jsp"><%= session.getAttribute("user.name") %></a>            
         </b>
         <input type="submit" name="session.logout" value="Sair">
         - <a href="index.jsp">Início</a>
-        <% if(role.equals("ADMIN")) { %>
+        <% if(role.equals("Administrador")) { %>
         - <a href="Disciplinas.jsp">Disciplinas</a>
         <% } %>
     </form>

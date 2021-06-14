@@ -61,7 +61,7 @@ public class Disciplinas {
         stmt.close();
         con.close();
     }
-     public static void removeUser(int id) throws Exception {
+     public static void removeDisciplinas(int id) throws Exception {
         Connection con = dblistener.getConnection();
         String sql = "DELETE FROM Disciplinas WHERE id = ?";
         PreparedStatement stmt = con.prepareStatement(sql);
