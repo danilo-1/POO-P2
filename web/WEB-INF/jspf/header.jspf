@@ -1,5 +1,5 @@
-<%@page import="br.edu.fatecpg.User"%>
-<%@page import="br.edu.fatecpg.dblistener"%>
+<%@page import="web.User"%>
+<%@page import="db.dblistener"%>
 <%@ page pageEncoding="UTF-8" %>
 <% 
     String Error = null;

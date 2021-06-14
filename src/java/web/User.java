@@ -44,7 +44,7 @@ public class User {
         String sql = "SELECT * FROM users WHERE login = ? and password_hash = ?";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1, login);
-        stmt.setLong(2, pass.hashCode());
+        stmt.setString(2, pass);
         ResultSet rs = stmt.executeQuery();        
         if(rs.next()) {
            user = new User(

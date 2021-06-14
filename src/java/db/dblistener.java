@@ -17,7 +17,7 @@ import web.User;
 public class dblistener implements ServletContextListener {
 
     public static final String CLASS_NAME = "org.sqlite.JDBC";
-    public static final String URL = "jdbc:sqlite:C:\\Users\\usuário\\Documents\\tools\\SQLite";
+    public static final String URL = "jdbc:sqlite:E:\\banco\\P2POO.db";
     
     public static String step = null;
     public static Exception exception = null;
@@ -38,17 +38,17 @@ public class dblistener implements ServletContextListener {
             String sql = "CREATE TABLE IF NOT EXISTS users("
                     + "name VARCHAR(200) NOT NULL,"
                     + "login VARCHAR(50) UNIQUE NOT NULL,"
-                    + "password_hash LONG,"
+                    + "password_hash varchar(200) NOT NULL,"
                     + "role VARCHAR(20) NOT NULL"
                     + ")";
             stmt.execute(sql);
             if(User.getUsers().isEmpty()){
                 step = "Inserindo usuário administrativo";
                 sql = "INSERT INTO users(name, login, password_hash, role) "
-                    + "VALUES('Administrador', 'admin', '"+ ("1234".hashCode()) +"', 'ADMIN')";
+                    + "VALUES('Administrador', 'admin', '1234', 'ADMIN')";
                 stmt.execute(sql);
                 sql = "INSERT INTO users(name, login, password_hash, role) "
-                    + "VALUES('Danilo', 'danilo@danilo', '"+ ("1234".hashCode()) +"', 'USER')";            
+                    + "VALUES('Danilo', 'danilo@danilo', '1234', 'USER')";            
                 stmt.execute(sql);
             }
                     
