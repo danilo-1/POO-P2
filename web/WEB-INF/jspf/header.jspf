@@ -55,7 +55,7 @@
         <input type="submit" name="session.logout" value="Sair">
         - <a href="index.jsp">Início</a>
         <% if(role.equals("ADMIN")) { %>
-        - <a href="users.jsp">Usuário</a>
+        - <a href="Disciplinas.jsp">Disciplinas</a>
         <% } %>
     </form>
 <% } %>

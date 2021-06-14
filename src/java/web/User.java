@@ -67,7 +67,7 @@ public class User {
         stmt.setString(1, login);
         stmt.setString(2, name);
         stmt.setString(3, role);
-        stmt.setLong(4, password.hashCode());
+        stmt.setString(4, password);
         stmt.execute();
         stmt.close();
         con.close();
@@ -86,7 +86,7 @@ public class User {
         Connection con = dblistener.getConnection();
         String sql = "UPDATE users SET password_hash = ? WHERE login = ?";
         PreparedStatement stmt = con.prepareStatement(sql);
-        stmt.setLong(1, newPassword.hashCode());
+        stmt.setString(1, newPassword);
         stmt.setString(2, login);
         stmt.execute();
         stmt.close();
